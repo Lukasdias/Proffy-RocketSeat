@@ -4,6 +4,7 @@ import Voltar from './../../assets/icons/back.svg'
 import {NavLink} from 'react-router-dom'
 import TeacherItem from './teacherItem'
 
+import './../component-styles/forms.scss'
 import './../component-styles/header.scss'
 import './styles.scss'
 
@@ -22,7 +23,7 @@ export default function () {
                         <strong>Esses são os proffys disponíveis</strong>
                         <form id='search-teachers'>
                             <div className='select-block'>
-                                <label for='subject'>Matéria</label>
+                                <label htmlFor='subject'>Matéria</label>
                                 <select name='subject' id='subject'>
                                     <option value='0' disabled='' hidden=''>Selecione uma opção</option>
                                     <option value='1'>Artes</option>
@@ -38,7 +39,7 @@ export default function () {
                                 </select>
                             </div>
                             <div className='select-block'>
-                                <label for='weekday'>Dia da semana</label>
+                                <label htmlFor='weekday'>Dia da semana</label>
                                 <select name='weekday' id='weekday'>
                                     <option value='0' disabled='' hidden=''>Selecione uma opção</option>
                                     <option value='1'>Domingo</option>
@@ -51,7 +52,7 @@ export default function () {
                                 </select>
                             </div>
                             <div className='input-block'>
-                                <label form='time'>Hora</label>
+                                <label htmlFor='time'>Hora</label>
                                 <input name='time' id='time' type='time' />
                             </div>
                             <button type='submit'>Filtrar</button>

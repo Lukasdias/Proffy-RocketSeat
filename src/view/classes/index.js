@@ -1,11 +1,26 @@
-import React from 'react'
+import React, {useEffect, useState}from 'react'
 import ProffyLogo from './../../assets/logo.svg'
 import Voltar from './../../assets/icons/back.svg'
+import Warning from './../../assets/icons/warning.svg'
+
 import {NavLink} from 'react-router-dom'
 import './../component-styles/header.scss'
+import './../component-styles/forms.scss'
 import './styles.scss'
 
 export default function () {
+
+    const addTime = () => {
+        const newFieldContainer = document.querySelector('.shedule-items').cloneNode(true)
+        const fields = newFieldContainer.querySelectorAll('input')
+
+        fields.forEach((field) => {
+            field.value = ''
+        })
+        
+        document.querySelector('#shedule-area').appendChild(newFieldContainer)
+    }
+
     return (
         <div id='page-classes'>
             <div id='container'>
@@ -47,7 +62,73 @@ export default function () {
                             </div>
                             
                         </fieldset>
+
+                        <fieldset>
+                            <legend>Sobre a aula</legend>
+                            <div className='select-block'>
+                                <label htmlFor='subject'>Matéria</label>
+                                <select name='subject' id='subject' required>
+                                    <option value=''>Selecione uma opção</option>
+                                    <option value='1'>Artes</option>
+                                    <option value='2'>Biologia</option>
+                                    <option value='3'>Ciências</option>
+                                    <option value='4'>Educação Fisica</option>
+                                    <option value='5'>Física</option>
+                                    <option value='6'>Geografia</option>
+                                    <option value='7'>História</option>
+                                    <option value='8'>Matemática</option>
+                                    <option value='9'>Português</option>
+                                    <option value='10'>Química</option>
+                                </select>
+                            </div>
+                            <div className='input-block'>
+                                <label htmlFor='cost'>Custa da sua hora/aula<small>(R$)</small></label>
+                                <input type='cost' id='cost' type='number' required />
+                            </div>
+                        </fieldset>
+                    
+                        <fieldset id='shedule-area'>
+                            <legend>Horários disponíveis
+                                <button type='button' id='add-time' onClick={()=>addTime()}>+ Novo Horário</button>
+                            </legend>
+
+                            <div className='shedule-items'>
+                                <div className='select-block'>
+                                    <label htmlFor='weekday'>Dia da semana</label>
+                                    <select name='weekday[]' required>
+                                        <option value='0' disabled='' hidden=''>Selecione uma opção</option>
+                                        <option value='1'>Domingo</option>
+                                        <option value='2'>Segunda-Feira</option>
+                                        <option value='3'>Terça-Feira</option>
+                                        <option value='4'>Quarta-Feira</option>
+                                        <option value='5'>Quinta-Feira</option>
+                                        <option value='6'>Sexta-Feira</option>
+                                        <option value='7'>Sábado</option>
+                                    </select>
+                                </div>
+
+                                <div className='input-block'>
+                                    <label htmlFor='time_from'>Das</label>
+                                    <input type='time' name='time_from[]' required />
+                                </div>
+
+                                <div className='input-block'>
+                                    <label htmlFor='time_to'>Até</label>
+                                    <input type='time' name='time_to[]' required />
+                                </div>
+
+                            </div>
+
+                        </fieldset>    
                     </form>
+                    <footer>
+                        <p>
+                            <img alt='' src={Warning} alt='aviso-importante' />    
+                            Importante!<br/>
+                            Preencha todos os dados
+                        </p>
+                        <button type='submit' from='create-class'>Salvar cadastro</button>   
+                    </footer>
                 </main>
             </div>
         </div>

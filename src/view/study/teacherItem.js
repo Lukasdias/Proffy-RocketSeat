@@ -3,7 +3,7 @@ import ZapIcon from './../../assets/icons/whatsapp.svg'
 export default function (props) {
     return  (
         <>
-            <article class="teacher-item">
+            <article className="teacher-item">
                 <header>
                     <img 
                         src={props.teacherPhotoUrl} 

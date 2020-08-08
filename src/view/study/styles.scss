@@ -3,6 +3,11 @@
     #container {
         width: 100vw;
         height: 100vh;
+
+        main {
+            margin: 3.2rem auto;
+            width: 90%;
+        }
     }
 
     #search-teachers {
@@ -36,41 +41,7 @@
         button:hover {
             background-color: var(--color-secondary-dark);
         }
-
-        .select-block label,
-        .input-block select {
-            font-size: 1.4rem;
-            color: var(--color-text-complement);
-        }
-
-        .input-block input,
-        .select-block select {
-            width: 100%;
-            height: 5.6rem;
-            margin-top: 0.8rem;
-            border-radius: 0.8rem;
-            background: var(--color-input-background);
-            border: 1px solid var(--color-line-in-white);
-            outline: 0;
-            padding: 0 1.6rem;
-            font: 1.6rem Archivo;
-        }
-
-        .input-block {
-            position: relative;
-        }
-
-        .input-block:focus-within::after {
-            content: "";
-
-            width: calc(100% -3.2rem);
-            height: 2px;
-            background: var(--color-primary-light);
-            position: absolute;
-            left: 1.6rem;
-            right: 1.6rem;
-            bottom: 0;
-        }
+        
     }
 
     .teacher-item {
@@ -173,7 +144,7 @@
                 grid-template-columns: repeat(4, 1fr);
                 gap: 16px;
                 position: absolute;
-                bottom: -28px;
+                bottom: -56px;
                 .select-block {
                     margin-bottom: 0;
                 }
@@ -200,6 +171,12 @@
 
                 }
             }
+        }
+
+        main {
+            padding: 32px 0;
+            max-width: 740px;
+            margin: 0 auto;
         }
     }
 }
