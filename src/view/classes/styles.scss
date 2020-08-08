@@ -50,6 +50,9 @@
                     background: var(--color-secondary-dark);
                 }
             }
+            .shedule-items {
+                transition: all 0.2s;
+            }
             .shedule-items+.shedule-items {
                 margin-top: 3.2rem;
                 padding-top: 3.2rem;
