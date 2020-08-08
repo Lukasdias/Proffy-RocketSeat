@@ -4,6 +4,7 @@ import Voltar from './../../assets/icons/back.svg'
 import {NavLink} from 'react-router-dom'
 import TeacherItem from './teacherItem'
 
+import './../component-styles/header.scss'
 import './styles.scss'
 
 export default function () {
